@@ -67,7 +67,7 @@ class ControleMovimentacao extends Config {
 
 		if ($mov == 1) {
 // 			apos validar se vor debito ele soma os valor com o valor de entrada
-			$novoSaldo = ( float )$xvalor + ( float )$debido;
+			$novoSaldo = ( float )$xvalor + ( float )$total;
 		} else {
 // 			valida se tem saldo para redirata 
 			if ($xvalor > $somaDebito || $xvalor >$total) {
@@ -80,7 +80,7 @@ class ControleMovimentacao extends Config {
 			} else {
 				
 // 				se tem valor para redirata ele subtrai com o valor de entrada
-				$novoSaldo = ( float )$debido - ( float )$xvalor;
+				$novoSaldo = ( float )$total - ( float )$xvalor;
 
 			}
 		}
