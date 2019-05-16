@@ -1,0 +1,59 @@
+CREATE SCHEMA dbconsultoria;
+
+CREATE TABLE dbconsultoria.cliente
+(
+cli_id SERIAL PRIMARY KEY,
+cli_nome VARCHAR(255),
+cli_endereco VARCHAR(255),
+cli_telefone VARCHAR(15),
+cli_email VARCHAR(40),
+cli_datanasc DATE,
+cli_profissao VARCHAR(100),
+cli_salario MONEY,
+cli_numdepen INTEGER,
+cli_credextra MONEY
+);
+
+CREATE TABLE dbconsultoria.movimento
+(
+mov_id SERIAL PRIMARY KEY,
+mov_nome VARCHAR(20)
+);
+
+CREATE TABLE dbconsultoria.tipo_movimento
+(n
+tipmov_id SERIAL PRIMARY KEY,
+tipmov_nome VARCHAR(50),
+mov_id INTEGER REFERENCES dbconsultoria.movimento (mov_id)
+);
+
+CREATE TABLE dbconsultoria.movimentacao
+(
+movi_id SERIAL PRIMARY KEY,
+cli_id INTEGER REFERENCES dbconsultoria.cliente (cli_id),
+movi_horario TIMESTAMP DEFAULT NOW(),
+movi_nundoc INTEGER,
+tipmov_id INTEGER REFERENCES  dbconsultoria.tipo_movimento (tipmov_id),
+movi_valor MONEY,
+movi_saldo MONEY
+);
+
+INSERT INTO dbconsultoria.movimento (mov_nome)
+VALUES
+('Deposito'),
+('Retirada');
+
+INSERT INTO dbconsultoria.tipo_movimento (tip_mov_nome,mov_id)
+VALUES
+('Dinheiro',1),
+('Cheque D',1),
+('Transferência D',1),
+('Caixa',2),
+('Cheque R',2),
+('Transferência R',2),
+('pagamaneto de conta',2);
+
+francisco50maria52everton81
+
+
+
