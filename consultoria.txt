@@ -43,7 +43,7 @@ VALUES
 ('Deposito'),
 ('Retirada');
 
-INSERT INTO dbconsultoria.tipo_movimento (tip_mov_nome,mov_id)
+INSERT INTO dbconsultoria.tipo_movimento (tipmov_nome,mov_id)
 VALUES
 ('Dinheiro',1),
 ('Cheque D',1),
