@@ -21,7 +21,7 @@ mov_nome VARCHAR(20)
 );
 
 CREATE TABLE dbconsultoria.tipo_movimento
-(n
+(
 tipmov_id SERIAL PRIMARY KEY,
 tipmov_nome VARCHAR(50),
 mov_id INTEGER REFERENCES dbconsultoria.movimento (mov_id)
