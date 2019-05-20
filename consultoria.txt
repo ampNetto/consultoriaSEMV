@@ -13,7 +13,7 @@ cli_salario MONEY,
 cli_numdepen INTEGER,
 cli_credextra MONEY
 );
-
+ 
 CREATE TABLE dbconsultoria.movimento
 (
 mov_id SERIAL PRIMARY KEY,
